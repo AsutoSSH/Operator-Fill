@@ -98,9 +98,9 @@ For Example:
 
 3(-5) will not give -15. Valid format is 3*(-5).
 
-PS: For anyone looking at the source codes and scratching their heads wondering what alien language has this guy written I WILL ADD COMMENTS FOR EACH AND EVERY STEP EVENTUALLY.
+PS: For anyone looking at the source codes and scratching their heads wondering what alien language this guy has written I WILL ADD COMMENTS FOR EACH AND EVERY STEP EVENTUALLY.
 
-BTW this is my First code that I'm uploading to github and I started C(my 1st programming language) about 2 months prior to releasing this Program to the public and this is technically my 3rd C++ program and I think you guys would like it.
+BTW this is my First code that I'm uploading to github and I started C (my 1st programming language) about 2 months prior to releasing this Program to the public and this is technically my 3rd C++ program (basically me telling I am new to these stuff) and I think you guys would like it.
 
 Also I am aware that this code is not even close to as efficient as it can be so I am open to suggestions. I did this for fun and also severly underestimated the sheer time and complexity of this program.
 
