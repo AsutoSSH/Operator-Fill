@@ -64,7 +64,7 @@ This is an optional blank present at the end of every question.
 
 You can Fill it or leave it as it is.
 
-If you wish to Fill it it only accepts ')'.
+If you wish to Fill it, it only accepts ')'.
 
 We filled this blank in Example 3 but we left it alone in all other examples.
 
