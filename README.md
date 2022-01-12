@@ -56,7 +56,7 @@ TYPES OF BLANKS
 
 This is the compulsory blank. All of the compulsory blanks must be filled.
 
-This blank accepts either an operator like '+' '-' '*' or '/' OR a bracket with an operator combo like '+(' or ')*' etc.
+This blank accepts either an operator like '+', '-' ,'*', or '/' OR a bracket with an operator combo like '+(' or ')*' etc.
 
 2. '..'
 
