@@ -90,7 +90,7 @@ NOTE
 
 All Character displayed above with quotes like '+' or '*(' are to be typed without quotes like + or *(.
 
-DOnt omit multiplying operator if trying to multiply thinking that 2 numbers side by side will multiply both numbers.
+Don't omit multiplying operator if trying to multiply thinking that 2 numbers in brackets placed side to side will multiply both numbers.
 
 For Example: 
 
