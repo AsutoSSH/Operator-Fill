@@ -1,6 +1,8 @@
 Welcome to Operator Fill
 
-This is a console based program made in C++ which in current stage has 700+ lines of code.(I have plans to make it object oriented for easy maintenance and making it shorter)
+This is a console based MATH program/game made in C++ which in current stage has 700+ lines of code.(I have plans to make it object oriented for easy maintenance and making it shorter)
+
+In this program/game you will be given a linear arithmetic equation out of which the the arithmetic operators will be left to you to fill to satisfy the given equation.  
 
 
 ABOUT THE PROGRAM
