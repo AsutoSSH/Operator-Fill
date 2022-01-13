@@ -76,13 +76,13 @@ COMMANDS
 
 If you dont know the answer to a question or wish to skip that question you can write "skip" or "SKIP" or "Skip" (without quotes of course) to skip the current question.
 
-The program will display one of the correct answers for the question.
+The program will display one of the correct answers for the question you skipped and switch to the next question.
 
 2."END"
 
 This command will End the game and view your results.
 
-Just type "end" or "End" or "END" (without quotes) to END the game and display how many questions you correctly answered.
+Just type "end" or "End" or "END" (without quotes) to END the game and display how many questions you answered correctly.
 
 
 
@@ -98,11 +98,13 @@ For Example:
 
 3(-5) will not give -15. Valid format is 3*(-5).
 
-PS: For anyone looking at the source codes and scratching their heads wondering what alien language this guy has written I WILL ADD COMMENTS FOR EACH AND EVERY STEP EVENTUALLY.
+PS: For anyone looking at the source codes and scratching their heads wondering what alien language did this guy write: I WILL ADD COMMENTS FOR EACH AND EVERY STEP EVENTUALLY.
 
 BTW this is my First code that I'm uploading to github and I started C (my 1st programming language) about 2 months prior to releasing this Program to the public and this is technically my 3rd C++ program (basically me telling I am new to these stuff) and I hope you guys would like it.
 
 Also I am aware that this code is not even close to as efficient as it can be so I am open to suggestions. I did this for fun and also severly underestimated the sheer time and complexity of this program.
+
+Feel free to post any feedback or bug you encounter in the issues tab.
 
 
 
