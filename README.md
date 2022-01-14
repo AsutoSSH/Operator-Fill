@@ -102,7 +102,7 @@ PS: For anyone looking at the source codes and scratching their heads wondering 
 
 BTW this is my First code that I'm uploading to github and I started C (my 1st programming language) about 2 months prior to releasing this Program to the public and this is technically my 3rd C++ program (basically me telling I am new to these stuff) and I hope you guys would like it.
 
-Also I am aware that this code is not even close to as efficient as it can be so I am open to suggestions. I did this for fun and also severly underestimated the sheer time and complexity of this program.
+Also I am aware that this code is not even close to as efficient as it can be so I am open to suggestions. I did this for fun and also severley underestimated the sheer time and complexity of this program.
 
 Feel free to post any feedback or bug you encounter in the issues tab.
 
