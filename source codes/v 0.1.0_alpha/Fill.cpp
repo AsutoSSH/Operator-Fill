@@ -34,7 +34,7 @@ int j = 0;                                                          //THIS IS A 
 double *nums = (double*)malloc(50 * sizeof(double));                //THIS STORES THE NUMERALS OF THE EQUATION
 double ans, usrans;                                                 //ANS IS ACTUAL VALUE OF EQN WHILE USRANS IS THE RESULT OF USER'S EQUATION
 bool will_to_play = 1;                                              //IT DOES WHAT IT SAYS MEASURES THE PLAYER'S WILL TO PLAY ;)
-string generated, blankgen, input, usreqn;
+string generated, blankgen, input, usreqn;							//GENERATED: STORES THE RANDOMLY GENERATED ARITHMETIC  // BLANKGEN:STORES THE ARITHMETIC BUT WITH BLANKS INSTEAD OF OPERATORS //INPUT:STORES USER'S INPUT //USREQN: STORES THE EQUATION MADE USING USER'S INPUT
 
 int main()
 {
