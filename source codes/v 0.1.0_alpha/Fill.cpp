@@ -26,8 +26,8 @@ double MultiCalculate(string inp);
 double Calculate(double l, char op, double r);
 void SeparateNumsnOps(string inp);
 
-int *bckt = (int*)malloc(2 * sizeof(int));
-int *blankpos = (int*)malloc(15 * sizeof(int));
+int *bckt = (int*)malloc(2 * sizeof(int));							//STORES POSN OF CURRENT BRACKET PAIR
+int *blankpos = (int*)malloc(15 * sizeof(int));						//STORES THE POSN OF BLANKS('_') PRESENT IN BLANKGEN STRING
 int bckt_count = 0, num_count = 0, op_count = 0, qno = 1, chck_inp, crct_ans_count = 0;
 int lenfactor, valuefactor;                                         //LENGTH FACTOR AND MAX VALUE FACTOR MODIFIED BY SET_DIFFICULTY() AND USED BY RANDOMGENERATOR()
 int j = 0;                                                          //THIS IS A POINTER FOR BLANKPOS() WHICH IS ALSO ACCESSED BY PROCESS() HENCE I HAD TO MAKE IT GLOBAL
