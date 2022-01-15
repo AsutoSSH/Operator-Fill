@@ -5,9 +5,9 @@ typedef struct
 {
     char type;
     int pos;
-} op;
+} op;																//CUSTOM DATATYPE FOR STORING OPERATORS' POSN AND TYPE
 
-op *ops = (op*)malloc(50 * sizeof(op));
+op *ops = (op*)malloc(50 * sizeof(op));								//ARRAY OF THE CUSTOM DATATYPE
 
 void DrawTitle();
 string BlankMaker(string inp);
@@ -72,6 +72,7 @@ int main()
     getline(cin,input);
 }
 
+//DRAWS HEADING
 void DrawTitle()
 {
     int qno =  1;
@@ -80,6 +81,7 @@ void DrawTitle()
     <<              "                   -BY ASHUTOSH MISHRA" << '\n' << '\n';
 }
 
+//CONVERTS THE RANDOMLY GENERATED EQN INTO A QUESTION WITH BLANKS. EX: 2+4-5 -> 2_4_5
 string BlankMaker(string inp)
 {
     int len = inp.length();
@@ -110,6 +112,7 @@ string BlankMaker(string inp)
     return inp;
 }
 
+//DRAWS THE QUESTION FORMAT
 void DrawQues()
 {
     randomgenerator();
@@ -122,6 +125,7 @@ void DrawQues()
     qno++;
 }
 
+//FINDS THE POSNS OF BLANKS AND POPULATES THE BLANKPOS ARRAY
 void Blankpos()
 {
     for (int i = 0; i < blankgen.length(); i++)
@@ -136,6 +140,7 @@ void Blankpos()
     
 }
 
+//CHECKS WHETHER THE INPUT IS VALID AND RETURNS ACCORDINGLY
 int Chck_inp()
 {
     if (input == "end" || input == "End" || input == "END")
@@ -198,6 +203,7 @@ int Chck_inp()
     return 1;
 }
 
+//PROCESSES THE USER INPUT/ANSWER
 int Process()
 {
     bool approval = 0;
@@ -305,6 +311,8 @@ int Process()
             }
         }
     }
+
+    //CHECKS FOR INCOMPLETE BRACKETS IN USER'S INPUT
     int stray_bckt = 0;
     for (int i = 0; i < usreqn.length(); i++)
     {
@@ -334,6 +342,7 @@ int Process()
             redo_current_ques();
             return 0;
         }
+
     // CHECKING ANSWER
     if (approval = 1)
     {
@@ -353,6 +362,7 @@ int Process()
     return 0;
 }
 
+//RE-PROMPTS THE CURRENT QUESTION
 int redo_current_ques()
 {
     cout << "Question " << qno - 1 << ": " << blankgen << " = " << ans << '\n' <<
@@ -386,11 +396,12 @@ int redo_current_ques()
     return 0;
 }
 
+//GENERATES THE EQUATION TO STRING "GENERATED"(GLOBAL VARIABLE) WHICH IS THEN CONVERTED TO BLANK FORMAT BY BLANKGEN()
 void randomgenerator()
 {
     generated.erase();
     lenfactor = 1;
-    valuefactor = 15;
+    valuefactor = 20;
     string nums, ops;
     int seed = 0;
     string op = "+-*+*--+";
@@ -403,7 +414,7 @@ void randomgenerator()
         generated = generated + nums + ops;
     }
     srand(time(0) + stoi(nums));
-    nums = to_string(rand() % 20 + 1);
+    nums = to_string(rand() % valuefactor + 1);
     generated = generated + nums;
     if((rand()%11)%2 == 0)
     {
@@ -438,6 +449,7 @@ void randomgenerator()
     generatebckt(generated);
 }
 
+//ADDS BRACKETS TO THE GENERATD EQN
 void generatebckt(string inp)
 {
     int post[20], count = 0, bcktpos, p;
@@ -462,6 +474,7 @@ void generatebckt(string inp)
     generated = inp;   
 }
 
+//INSERTS DIVISION TERMS TO THE GENERATED EQN
 void insertdiv(string inp)
 {
     int count = 0, divpos;
@@ -494,6 +507,10 @@ void insertdiv(string inp)
     free(validpos);
 }
 
+//EVERYTHING BELOW THIS LINE IS USEED TO CALCULATE ANSWER TO THE GENERATED EQUATION AND ALSO THE ANSWER TO THE USER'S EQN
+
+
+//THIS FUNCTION IS THE GOVERNOR OF ALL FUNCTIONS RELATED TO THE CALCULATING PART
 double OmegaCalculate(string inp)
 {
     double result;
@@ -516,6 +533,7 @@ double OmegaCalculate(string inp)
     return result;
 }
 
+//CHECKS IF INCOMPLETE BRACKETS ARE THERE
 bool Bckt_check(string inp)
 {
     int stray_bckt = 0;
@@ -546,6 +564,7 @@ bool Bckt_check(string inp)
     }
 }
 
+//CHOOSES WHICH BRACKET TO CALCULATE FIRST AND FILLS THE POSN OF THE '(' AND ')' IN BCKT[]. 
 int Bckt_Sept(string inp)
 {
     for (int i = 0; i < inp.length(); i++)
@@ -566,6 +585,7 @@ int Bckt_Sept(string inp)
     return 1;
 }
 
+//THIS IS THE FUNCTION THAT WOULD FIND ANSWER TO AN ARITHMETIC PROBLEM IF IT HAS NO BRACKETS IN IT. FOR EX: IF INPUTTED 2+3-1 IT WOULD RETURN 4.
 double MultiCalculate(string inp)
 {
     double r;
@@ -660,6 +680,7 @@ double MultiCalculate(string inp)
     return 0;
 }
 
+//THIS CALCULATES 2 NUMBERS. FOR EXAMPLE IF INPUTTED 2+3 IT RETURNS 5.
 double Calculate(double l, char op, double r)
 {
     switch (op)
@@ -680,6 +701,8 @@ double Calculate(double l, char op, double r)
     return 0;
 }
 
+//THIS POPULATES THE NUMS ARRAY WITH THE NUMS PARTS OF THE INPUT IN ORDER. ALSO IT POPULATES THE OPS ARRAY WITH THE OPERATOR TYPE AND POSN.
+//FOR EX: INPUT = 2+3-1 THEN NUMS = {2,3,1} OPS.POS = {1,3} OPS.TYPE = {+,-}.
 void SeparateNumsnOps(string inp)
 {
     string temp;
