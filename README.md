@@ -9,7 +9,7 @@ ABOUT THE PROGRAM
 
 The questions are semi-randomly generated.
 
-Calculation is done based on BODMAS rule but '+' and '-' are give equal priority as the Calculator will convert any subtraction into a negative number and add those numbers.
+Calculation is done based on BODMAS rule but '+' and '-' are given equal priority as the Calculator will convert any subtraction into a negative number and add those numbers.
 FOR EXAMPLE: 34 - 21 will be calculated as 34 + (-21) = 13.
 
 For now most numbers will be < 20. Some numbers will be > 20 but always < 100.
