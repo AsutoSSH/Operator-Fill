@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime> // for Windows 
 using namespace std;
 
 typedef struct
