@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime> // for Windows 
+#include <ctime> // for Windows or old gcc versions
 using namespace std;
 
 typedef struct
