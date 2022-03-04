@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath> //FOR FLOOR AND CEIL IN three_decimal() FUNCTION
 #include <ctime> // for Windows or old gcc versions
 using namespace std;
 
@@ -15,6 +16,7 @@ string BlankMaker(string inp);
 void DrawQues();
 void Blankpos();
 int Chck_inp();
+double three_decimal(double doubll);
 int Process();
 int redo_current_ques();
 void randomgenerator();
@@ -119,6 +121,7 @@ void DrawQues()
     randomgenerator();
     blankgen = BlankMaker(generated);
     ans = OmegaCalculate(generated);
+    ans = three_decimal(ans);
     cout << "Question " << qno << ": " << blankgen << " = " << ans <<'\n' <<
             "Enter Answer: ";
     input.erase();
@@ -202,6 +205,22 @@ int Chck_inp()
         }
     }
     return 1;
+}
+
+//REDUCES THE NO OF DIGITS AFTER DECIMAL TO 3. FOR EX- 11.4856...(THERE ARE 15 HIDDEN VALUES/DIGITS FOR DOUBLE DATATYE) -> 11.485 (NO HIDDEN DIGITS)
+double three_decimal(double doubll)
+{
+    doubll = doubll * 1000;
+    if (doubll < 0)
+    {
+        doubll = ceil(doubll);
+    }
+    else
+    {
+        doubll = floor(doubll);
+    }
+    doubll = doubll / 1000;
+    return doubll;
 }
 
 //PROCESSES THE USER INPUT/ANSWER
@@ -348,6 +367,7 @@ int Process()
     if (approval = 1)
     {
         usrans = OmegaCalculate(usreqn);
+        usrans = three_decimal(usrans);
         if (usrans == ans)
         {
             cout << '\n' << "Correct Answer +1 ;)" << endl << endl;

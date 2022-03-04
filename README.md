@@ -106,12 +106,14 @@ Also I am aware that this code is not even close to as efficient as it can be so
 
 Feel free to post any feedback or bug you encounter in the issues tab.
 
+PS: If your binary file (.out) throws some error while running see the Binary_run_error.txt.
+
 
 
  
 
 
-.
+
 
 
 
