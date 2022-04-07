@@ -182,8 +182,14 @@ void asian_wrong_quotes()
     srand(time(0) + usrans);
     quotes.push_back("You are a disgrace to society. The equation could have been " + generated + " but your dumb mind chose " + usreqn + " which is equal to " + to_string(usrans) + " not " + to_string(ans));
     quotes.push_back("Sharmaji's Son got 99/100 in maths and look at you scum, cant even solve this simple question.\n" + generic_ans_quote);
-    quotes.push_back(" ");
-    int i = rand() % quotes.size();
+    quotes.push_back("The Experiments suggest that the player has an IQ level of a lamb. Thats the lowest IQ recorded for a human.\n" + generic_ans_quote);
+    quotes.push_back("You arent stupid,you are just unlucky at thinking. Yes you use your luck instead of your brain to think.\n" + generic_ans_quote);
+    quotes.push_back("Science has now validated your birth mother's decision to abandon you on a doorstep.\n" + generic_ans_quote);
+    quotes.push_back("Nobody in this world is that pointlessly stupid. Nobody but you.\n" + generic_ans_quote);
+    quotes.push_back("Most people nail this question within 2 seconds. I want to congratulate you on beating the odds and somehow getting this question wrong.\n" + generic_ans_quote);
+    quotes.push_back("Few years ago thousands of scientists worked on making a biological being that only had genes that stunt intelligence in humans. You were the result of that.\n" + generic_ans_quote);
+
+    int i = (rand() + (int)usrans/(int)ans) % quotes.size();
     cout << i << endl;
     cout << '\n'
          << quotes[i] << '\n' << endl;
