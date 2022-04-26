@@ -1,4 +1,4 @@
-Welcome to Operator Fill
+﻿Welcome to Operator Fill
 
 This is a console based MATH program/game made in C++ which in current stage has 700+ lines of code.(I have plans to make it object oriented for easy maintenance and making it shorter)
 
@@ -7,17 +7,10 @@ In this program/game you will be given a linear arithmetic equation out of which
 
 ABOUT THE PROGRAM
 
-The questions are semi-randomly generated.
+The questions are randomly generated but the division parts in the questions are kind of controlled so as to make them not so hard. You wouldnt want to put a division sign between say 99 and 98 but have a possibility that there will be a division sign between say 25 and 5 or 13 and 2 (Easy divisions easy to anticipate).
 
 Calculation is done based on BODMAS rule but '+' and '-' are given equal priority as the Calculator will convert any subtraction into a negative number and add those numbers.
 FOR EXAMPLE: 34 - 21 will be calculated as 34 + (-21) = 13.
-
-For now most numbers will be < 20. Some numbers will be > 20 but always < 100.
-
-There are 4 numerals in an equation with 3 blanks to fill between them and a Fourth optional blank which only accepts ')'.
-
-You will be able to choose Difficulty and and also custom length of equation in Later updates.
-
 
 INSTRUCTIONS
 

@@ -17,6 +17,7 @@ void DrawTitle();
 void Prompt_Dificulty();
 bool Process_difficulty();
 bool chck_diff_inp(int inp, int low, int high);
+void asian_skip_quotes();
 string BlankMaker(string inp);
 void DrawQues();
 void Blankpos();
@@ -59,14 +60,20 @@ int main()
         {
             Process();
         }
-        else if (chck_inp == 2)
+        else if (chck_inp == 2)         //IF USER SKIPS THE QUESTION
         {
             while (Chck_inp() == 2)
             {
                 j = 0;
-                cout << "An answer was: " << generated << ". Better Luck Next Question" << endl;
+                if (asian == 0)
+                {
+                    cout << "An answer was: " << generated << ". Better Luck Next Question" << endl;
+                }
+                else
+                {
+                    asian_skip_quotes();
+                }
                 cin.clear();
-
                 DrawQues();
                 Blankpos();
                 if (Chck_inp() == 1)
@@ -77,6 +84,10 @@ int main()
         }
         j = 0;
     }
+    free(nums);
+    free(bckt);
+    free(blankpos);
+    free(ops);
     cout << "You Answered " << crct_ans_count << " out of " << qno - 2 << " questions" << endl
          << "Press Ctrl+C to exit :)" << endl;
 
@@ -97,13 +108,13 @@ void DrawTitle()
 void Prompt_Dificulty()
 {
     cout << "Choose your desired difficulty level\n\n";
-    cout << "1.\"1+1 IS 11 I PRESUME ( ° ͜ʖ °)\": Eqn of length 4 with most numerals less than 5\n\n";
+    cout << "1.\"KINDERGARTEN PHD\": Eqn of length 4 with most numerals less than 5\n\n";
     cout << "2.\"I KNOW HOW TO COUNT\": Eqn of length 4 with most numerals less than 10\n\n";
-    cout << "3.\"13 Table Exists?\": Eqn of length 4  with most numerals less than 20\n\n";
+    cout << "3.\"13 TABLE EXISTS?\": Eqn of length 4  with most numerals less than 20\n\n";
     cout << "4.\"I CAN FIND 0/0\": Eqn of length 5 with most numerals less than 20\n\n";
     cout << "5.\"ARYABHATA\": Eqn of length 6 with most numerals less than 50\n\n";
     cout << "6.\"ARYABHATA'S GURU\": Choose this difficulty only if you have personally tutored Aryabhata. Eqn of length 7 with most numerals less than 50\n\n";
-    cout << "7.\"ASIAN\": The ASIAN difficulty mode featuring EMOTIONAL DAMAGE and DEPRESSION. Not for the faint of heart.\n\n";
+    cout << "7.\"ASIAN\": The ASIAN difficulty mode featuring EMOTIONAL DAMAGE and DEPRESSION. Not for the faint of heart. But there is GLaDOS to cheer you up so no worries ;)\n\n";
 }
 
 bool Process_difficulty()
@@ -183,14 +194,25 @@ void asian_wrong_quotes()
     quotes.push_back("You are a disgrace to society. The equation could have been " + generated + " but your dumb mind chose " + usreqn + " which is equal to " + to_string(usrans) + " not " + to_string(ans));
     quotes.push_back("Sharmaji's Son got 99/100 in maths and look at you scum, cant even solve this simple question.\n" + generic_ans_quote);
     quotes.push_back("The Experiments suggest that the player has an IQ level of a lamb. Thats the lowest IQ recorded for a human.\n" + generic_ans_quote);
-    quotes.push_back("You arent stupid,you are just unlucky at thinking. Yes you use your luck instead of your brain to think.\n" + generic_ans_quote);
+    quotes.push_back("You arent stupid,you are just unlucky at thinking. Yes you are that retarded that you use your luck instead of your brain to think.\n" + generic_ans_quote);
     quotes.push_back("Science has now validated your birth mother's decision to abandon you on a doorstep.\n" + generic_ans_quote);
     quotes.push_back("Nobody in this world is that pointlessly stupid. Nobody but you.\n" + generic_ans_quote);
     quotes.push_back("Most people nail this question within 2 seconds. I want to congratulate you on beating the odds and somehow getting this question wrong.\n" + generic_ans_quote);
     quotes.push_back("Few years ago thousands of scientists worked on making a biological being that only had genes that stunt intelligence in humans. You were the result of that.\n" + generic_ans_quote);
 
     int i = (rand() + (int)usrans/(int)ans) % quotes.size();
-    cout << i << endl;
+    cout << '\n'
+         << quotes[i] << '\n' << endl;
+}
+
+void asian_skip_quotes()
+{
+    string generic_ans_quote = "A right ans was " + generated + " Idiot!";
+    vector <string> quotes;
+    quotes.push_back("Winners never quit and quitters never win. Hence you are a loser\n" + generic_ans_quote);
+    quotes.push_back("I hope this is the first question of your final exam\n" + generic_ans_quote);
+
+    int i = (rand() + (int)usrans/(int)ans) % quotes.size();
     cout << '\n'
          << quotes[i] << '\n' << endl;
 }
@@ -526,7 +548,14 @@ int redo_current_ques()
         while (Chck_inp() == 2)
         {
             j = 0;
-            cout << "\nAn answer was: " << generated << ". Better Luck Next Question\n" << endl;
+            if (asian == 0)
+            {
+                cout << "An answer was: " << generated << ". Better Luck Next Question" << endl;
+            }
+            else
+            {
+                asian_skip_quotes();
+            }
             DrawQues();
             Blankpos();
             if (Chck_inp() == 1)
