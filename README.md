@@ -91,15 +91,15 @@ For Example:
 
 3(-5) will not give -15. Valid format is 3*(-5).
 
-PS: For anyone looking at the source codes and scratching their heads wondering what alien language did this guy write: I WILL ADD COMMENTS FOR EACH AND EVERY STEP EVENTUALLY.
+PS:
 
-BTW this is my First code that I'm uploading to github and I started C (my 1st programming language) about 2 months prior to releasing this Program to the public and this is technically my 3rd C++ program (basically me telling I am new to these stuff) and I hope you guys would like it.
+BTW this was my First code that I uploaded to github and I was new to programming and didnt know about code styles and formatting hence the code is a mess. I will try to add comments so that it would be a bit more understandable in the near future. I hope you guys would like it.
 
 Also I am aware that this code is not even close to as efficient as it can be so I am open to suggestions. I did this for fun and also severley underestimated the sheer time and complexity of this program.
 
 Feel free to post any feedback or bug you encounter in the issues tab.
 
-PS: If your binary file (.out) throws some error while running see the Binary_run_error.txt.
+Read the Troubleshoot.txt if you encounter any problems.
 
 
 
